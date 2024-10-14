@@ -1,5 +1,5 @@
 from src.category import Category
-
+from src.product import Product
 
 def test_init_category(category_1, category_2):
     assert category_1.name == "Смартфоны"
@@ -16,5 +16,16 @@ def test_init_category(category_1, category_2):
 
     assert Category.category_count == 2
     assert Category.product_count == 4
-    assert len(category_1.products) == 3
-    assert len(category_2.products) == 1
+    assert len(category_1.list_product) == 3
+    assert len(category_2.list_product) == 1
+
+def test_category_products_property(category_1):
+    assert category_1.products == 'Samsung Galaxy S23 Ultra, 180000.0 руб., Остаток: 5 шт.\nIphone 15, 210000.0 руб., Остаток: 8 шт.\nXiaomi Redmi Note 11, 31000.0 руб., Остаток: 14 шт.\n'
+
+
+def test_add_product():
+    product = Product('1', '2', 3.0, 4)
+    product.name = '1'
+    product.description = '2'
+    product.price = 180000.0
+    product.quantity = 5
