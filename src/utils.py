@@ -8,6 +8,7 @@ from src.product import Product
 BASE_DIR = Path(__file__).resolve().parent.parent
 path_products_json = BASE_DIR / "data" / "products.json"
 
+
 def get_products_json(file_path: Any) -> list:
     """
     Принимает на вход путь до JSON-файла и возвращает список словарей с данными о категории товаров, описании и списке товаров
@@ -26,6 +27,7 @@ def get_products_json(file_path: Any) -> list:
                 return []
     except FileNotFoundError:
         return []
+
 
 def create_objects_from_json(data):
     categories = []
