@@ -37,14 +37,14 @@ def create_objects_from_json(data):
         categories.append(Category(**category))
     return categories
 
-if __name__ == '__main__':
-    raw_data = get_products_json(path_products_json)
-    categories_data = create_objects_from_json(raw_data)
-
-    print(categories_data[0].name)
-    print(categories_data[0].description)
-    print(categories_data[0].products)
-
-    print(categories_data[1].name)
-    print(categories_data[1].description)
-    print(categories_data[1].products)
+# if __name__ == '__main__':
+#     raw_data = get_products_json(path_products_json)
+#     categories_data = create_objects_from_json(raw_data)
+#
+#     print(categories_data[0].name)
+#     print(categories_data[0].description)
+#     print(categories_data[0].products)
+#
+#     print(categories_data[1].name)
+#     print(categories_data[1].description)
+#     print(categories_data[1].products)

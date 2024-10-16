@@ -1,3 +1,5 @@
+from src.product import Product
+
 def test_init_product_1(product_1):
     assert product_1.name == "Samsung Galaxy S23 Ultra"
     assert product_1.description == "256GB, Серый цвет, 200MP камера"
@@ -17,3 +19,9 @@ def test_init_product_3(product_3):
     assert product_3.description == "1024GB, Синий"
     assert product_3.price == 31000.0
     assert product_3.quantity == 14
+
+
+def test_price_update(capsys, product_1):
+    product_1.price = -100
+    message = capsys.readouterr()
+    assert message.out.strip() == 'Цена не должна быть нулевая или отрицательная'
