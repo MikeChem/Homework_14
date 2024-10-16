@@ -1,8 +1,11 @@
+from pathlib import Path
+
 import pytest
 
 from src.category import Category
 from src.product import Product
-from pathlib import Path
+from src.product_iterator import ProductIterator
+
 
 @pytest.fixture
 def product_1():
@@ -102,3 +105,7 @@ def data():
         }
     ]
     return data_json
+
+@pytest.fixture
+def product_iterator(category_1):
+    return ProductIterator(category_1)
