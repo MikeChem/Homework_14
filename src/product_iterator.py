@@ -7,8 +7,8 @@ class ProductIterator:
         return self
 
     def __next__(self):
-        if self.index < len(self.category.list_product):
+        if self.index < len(self.category.list_product) - 1:
             self.index += 1
             return self.category.list_product[self.index]
         else:
-            return StopIteration
+            raise StopIteration

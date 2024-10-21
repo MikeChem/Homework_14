@@ -1,0 +1,6 @@
+from pathlib import Path
+
+
+ROOT_DIR = Path(__file__).resolve().parent
+DATA_DIR = ROOT_DIR / "data"
+path_products_json = ROOT_DIR / "data" / "products.json"
