@@ -1,17 +1,17 @@
 import json
-from pathlib import Path
 from typing import Any
 
+from config import DATA_DIR
 from src.category import Category
 from src.product import Product
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-path_products_json = BASE_DIR / "data" / "products.json"
+path_products_json = DATA_DIR / "products.json"
 
 
 def get_products_json(file_path: Any) -> list:
     """
-    Принимает на вход путь до JSON-файла и возвращает список словарей с данными о категории товаров, описании и списке товаров
+    Принимает на вход путь до JSON-файла и возвращает список словарей с данными о категории товаров,
+    описании и списке товаров
     Если файл пустой, содержит не список или не найден, функция возвращает пустой список.
     """
 
@@ -38,6 +38,7 @@ def create_objects_from_json(data):
         category["products"] = products
         categories.append(Category(**category))
     return categories
+
 
 # if __name__ == '__main__':
 #     raw_data = get_products_json(path_products_json)
