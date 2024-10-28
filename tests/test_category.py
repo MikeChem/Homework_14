@@ -2,7 +2,6 @@ import pytest
 
 from src.category import Category
 from src.product import Product
-from tests.conftest import category_1
 
 
 def test_init_category(category_1, category_2):
@@ -46,3 +45,8 @@ def test_str_category(category_1):
 def test_add_smartphone_lawn_grass(smartphone_1, lawn_grass_2):
     with pytest.raises(TypeError):
         smartphone_1 + lawn_grass_2()
+
+
+def test_middle_price(category_1, category_empty):
+    assert int(category_1.middle_price()) == 140333
+    assert category_empty.middle_price() == 0
